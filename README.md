@@ -12,6 +12,7 @@ a target to full-blown LLVM optimization and `ld` invocation becomes trivial.
 How to play on your own
 -----------------------
  - Build LLVM and put everything to `vendor/llvm` directory (`llc` should be accessible via `vendor/llvm/bin/llc`)
+ - For the second option you also need `nasm` (could be installed via homebrew)
  - Run `code/build.osx.x86_64.sh`
  ~~~~~~
   USAGE: ./code/build.osx.x86_64.sh <mode>
