@@ -60,8 +60,7 @@ esac
 
 # LLVM pipeline common for all modes: optimize -> compile -> assemble
 exe vendor/llvm/bin/opt build/$prelinked_src_file $opt_flag -S -o build/$src_file.opt
-exe vendor/llvm/bin/llc build/$src_file.opt $opt_flag -o build/hello.s
-exe vendor/llvm/bin/clang -cc1as build/hello.s -filetype obj -o build/hello.o
+exe vendor/llvm/bin/llc build/$src_file.opt $opt_flag -filetype obj -o build/hello.o
 
 # Link executable
 exe ld $lib_file build/hello.o \
