@@ -4,8 +4,8 @@ global _exit
 global _write
 
 %macro __syscall 1
-    mov rax, %1
-    syscall
+    mov eax, %1
+    int 0x80
 %endmacro
 
 section .text
@@ -14,10 +14,11 @@ section .text
 ; to be the same as for normal functions
 
 _exit:
-    __syscall 0x2000001
+    __syscall 0x1
     ret
 
 _write:
-    __syscall 0x2000004
+    __syscall 0x4
     ret
+
 

@@ -13,16 +13,20 @@ How to play on your own
 -----------------------
  - Build LLVM and put everything to `vendor/llvm` directory (`llc` should be accessible via `vendor/llvm/bin/llc`)
  - For the second option you also need `nasm` (could be installed via homebrew)
- - Run `code/build.osx.x86_64.sh`
+ - Run `code/build.osx.sh`
  ~~~~~~
-  USAGE: ./code/build.osx.x86_64.sh <mode>
+  USAGE: ./code/build.osx.sh <arch> <mode>
+  
+  ARCHITECTURES:
+    x86
+    x86_64
   
   MODES:
     clean      Remove all build files
     cstd       Build using C stdlib (libSystem.dylib)
-    minstd     Build using minimal stdlib (minstd.osx.x86_64.asm)
+    minstd     Build using minimal stdlib (minstd.osx.<arch>.asm)
     llstd      Build using minimal stdlib defined in LLVM bitcode
-               providing inlining possibility (minstd.osx.x86_64.ll)
+               providing inlining possibility (minstd.osx.<arch>.ll)
  ~~~~~~
  
  - Run `build/hello.out`
